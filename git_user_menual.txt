@@ -1,5 +1,11 @@
 *** git 설치
-
+1. gif for window 설치
+2. Context 메뉴에서 git GUI here / gif bash here
+    - vs code terminal을 이용해도 가능
+    - terminal을 활요하는 방법{cf. Atom과 git 연동}
+    - sourcetree를 이용하는 방법{Git GUI와 유사 termial을 이용하지 않고 창모양 interface제공}
+    - Atlassian git 이용
+3. 저장소 만들기{github에서 new repository 생성, local 저장소와 원격저장소 동기화}
 
 *** 터미널에서 git 시작 
 4. terminal에서 git 시작
@@ -7,4 +13,38 @@
     2) window terminal인 경우 dir, cd 명령어를 사용하여 경로이동
     3) git init 명령어 입력
         [Initialized empty Git repository in C:/Users/도기동/Desktop/git_user_menual/.git/]
-5. github에서 repository를 만들고 나서, 최초 {git remote add origin http://......}
+5. github에서 repository를 만들고 나서, 최초 {git remote add origin http://......}를 복사하여, 
+   terminal의 local저장소 target folder에서(cursor 위치) 복사하여 붙임.
+   [git remote add origin https://github.com/skidmarks/git_user_menual.git]
+6. git status 로 상태 확인.
+7. git add test(stage add) or git add . (전체)
+8. git commit -m 'test'
+    최초의 commit의 경우 user.email / user.name을 넣어야 됨.
+9. git config [--global] user.email ["...."]
+   git config [--global] user.name ["...."]
+   {to set your account's default identity ommit[--glbal] to set the identity only discard(포기하다, 버려지다)}
+10. 다시 git commit -m 'test'
+11. git push -u origin master
+    {가상저장공간 github에 밀어넣기, master는 master branch를 말함}
+12. 첫 push시에 username/password 입력
+    [username for 'https://github.com':"......."]
+    [password for 'http://skidmarks@github.com': "****......."]
+13. git branch 만들기
+    [git checkout -b beta]
+    {checkout: switched to a new branch, beta:새 branch 예시명칭}
+14. 현재 branch 상태 확인
+    [git branch] {현재 나의 branch 위치 확인 가능
+15. git branch
+    * beta {현재 branch 표시 *}
+    master {최초, 중심 branch}
+16. 새로 beta branch에서 파일을 만들고 add / commit
+    [git push -u origin beta]
+17. git checkout master {master branch로 이동}
+18. git branch
+    beta
+    * master {현재 branch}
+19. merge {master에서 통합}
+    [git merge beta]
+20. git push {다시 원격저장소 github에 push}
+21. git log
+    [g]{keyboard key "g"를 누그면 log 리스트에서 exit됨}
