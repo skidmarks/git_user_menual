@@ -1,0 +1,10 @@
+*** git 설치
+
+
+*** 터미널에서 git 시작 
+4. terminal에서 git 시작
+    1) local 저장 폴더로 이동한다.(미리 폴더를 만듬)
+    2) window terminal인 경우 dir, cd 명령어를 사용하여 경로이동
+    3) git init 명령어 입력
+        [Initialized empty Git repository in C:/Users/도기동/Desktop/git_user_menual/.git/]
+5. github에서 repository를 만들고 나서, 최초 {git remote add origin http://......}
