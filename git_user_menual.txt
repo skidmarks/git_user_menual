@@ -47,6 +47,4 @@
     [git merge beta]
 20. git push {다시 원격저장소 github에 push}
 21. git log
-    [g]{keyboard key "g"를 누그면 log 리스트에서 exit됨}
-
-    
+    [g]{keyboard key "q"를 누그면 log 리스트에서 exit됨}
