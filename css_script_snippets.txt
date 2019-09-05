@@ -10,12 +10,15 @@ https://responsivedesign.is/develop/javascript/conditionally-load-javascript-bas
 ## Tip code!!
 
 ### look at the width of the device
+~~~
     if (screen.width >= 900) {
         // download complicated script
         // swap in full-source images for low-source ones
     }
+~~~
 
 ### look at the width of the viewport
+~~~
     @meida all and (max-width: 900px) {
 
     }
@@ -23,7 +26,7 @@ https://responsivedesign.is/develop/javascript/conditionally-load-javascript-bas
     if(document.documentElement.clientWidth < 900) {
         // scripts
     }
-
+~~~
 
 ## Check out further
 * http://adactio.com/journal/5429/
