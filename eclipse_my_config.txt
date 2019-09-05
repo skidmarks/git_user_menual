@@ -1,0 +1,23 @@
+1. 이클립스 단축키 변경
+    window > Preferences > General > Keys
+
+2. utf-8 설정
+    1) Window > Preferences > General > Workspace
+        : Text file encoding > other: UTF-8 선택
+
+    2) Window > Preferences > Web > CSS Files
+        : encoding: ISO 10646/Unicode(UTF-8) 선택
+
+    2) Window > Preferences > Web > HTML Files
+        : encoding: ISO 10646/Unicode(UTF-8) 선택
+
+    3) Window > Preferences > Web > JSP Files
+        : encoding: ISO 10646/Unicode(UTF-8) 선택
+
+    4) Window > Preferences > General > Content Types
+        : default encoding: UTF-8 선택 / Update 확인
+
+3. 이클립스 글꼴 변경
+    window > Preferences > General > Appearance > Colors and Fonts
+        : Basic 항목에서 Text Font 선택 > Edit 확인 후 변경 
+            Ex. Verdana 보통 10
