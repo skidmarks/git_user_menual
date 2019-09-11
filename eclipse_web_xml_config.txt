@@ -1,0 +1,42 @@
+WEB.XML 설정에는 무엇이 있을까
+============================
+
+참고: https://mkil.tistory.com/286
+
+
+# 1. <context-param>
+* STS에서 기본적으로 제공해주는 설정 파일 외에, 사용자가 직접 컨트롤 하는 XML파일을 지정해주는 역할을 한다.
+*<context=param>에서 설정되어 있는 root-context.xml은 모든 서블릿과 필터에서 사용되는 루트 스프링 컨테이너에 대한 설정이다. 
+~~~
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB_INF/spring/root-context.xml</param-value>
+    </context-param>
+~~~
+
+# 2. <listener>
+* 스프링 설정 정보를 읽는다.
+~~~
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+~~~
+
+# 3. <servlet>
+* spring에서는 DispatcherServlet이 모든 요청을 받고, 요청의 URL과 맴핑하는 Controller에 위임된다.
+* 서블릿(Servlet)이란 보통 자바에서 동적 웹 프로젝트를 개발할 때, 사용자의 요청과 응답을 처리해 주는 역할을 한다.
+~~~
+    <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextContfigLocation</param-name>
+            <param-value>/WEB_INF/spring/appServlet/servlet-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+~~~
