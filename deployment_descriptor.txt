@@ -22,3 +22,48 @@ http://blog.naver.com/PostView.nhn?blogId=alsrud477&logNo=130184226502&parentCat
 ## 3) <display-name>jspbook</display-name>
   * 애플리케이션의 표시이름을 설정하는 부분이다. 이클립스에서는 기본적으로 프로젝트명으로 설정된다. 필요하다면 수정할수있다.
 
+## 4) 서블릿 설정
+    <servlet>
+        <description>처음 만드는 서블릿</description>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <servlet-class>jspbook.ch04.HelloWorldServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <url-pattern>/control.do</url-pattern>
+    </servlet-mapping>
+  * 서블릿 설정은 모든 서블릿에 대해 해주어야 하며, 여기서는 HelloWorldServlet을 정의하고 있다.
+  * <servlet-mapping>에서 해당 서블릿을 호출하기 위한 URL을 설정한다.
+  * 여기서는 http://localhost:8080/jspbook/control.do 을 입력하면 HelloWorldServlet 이 실행된다.
+  * 필요하다면 <init-param>태그를 이용해 초기화 파라미터를 설정할 수 있다.
+
+## 5) 필터
+    <filter>
+        <filter-name>JspBookRequest</filter-name>
+        <filter-class>jspbook.ch09.JspBookFilter</filter-class>
+        <init-param>
+            <param-name>EncodingName</param-name>
+            <param-value>euc-kr</param-value>
+        </init-param>
+    </filter>
+    </filter-mapping>
+        <filter-name>JspBookRequest</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+  * 필터는 웹 애플리케이션 전반에 걸쳐 특정 URL이나 파일 요청 시 먼저 로딩되어 사전에 처리할 작업을 수행(필터링)하고 해당 요청을 처리하는 자바 웹 애플리케이션 유형 중 하나이다. 초기 파라미터 값으로 EncodingName을 추가하였는데 나중에 필터에서는 euc-kr이라는 값으로 참조된다. <filter-mapping>에서는 해당 필터를 적용할 URL패턴이나 서블릿 등을 등록한다. 여기서는 모든 JSP파일에 대해 필터가 동작하도록 설정하고 있다.
+
+## 6) 요청 시 자동으로 보여줄 파일
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    <welcome-file-list>
+  * 웹 애플리케이션 요청 시 자동으로 보여줄 파일을 지정한다.
+  * 예를 들어, http://localhost:8080/jspbook 이라고만 입력하면 자동으로 index.html 이나 index.jsp 파일을 보여준다.
+
+## 7) context-param
+    <context-param>
+        <param-name>workspace</param-name>
+        <param-value>c:\dev\workspace</param-value>
+    </context-param>
+  * <context-param>은 애플리케이션 전반에 걸쳐 공유할 파라미터를 설정하는 부분이다. 필요에 따라 설정하면 된다.
+  * 이클립스의 경우 'workspace'경로가 자동으로 등록된다.
