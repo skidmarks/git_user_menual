@@ -1,0 +1,24 @@
+배포 서술자, web.xml
+===================
+
+http://blog.naver.com/PostView.nhn?blogId=alsrud477&logNo=130184226502&parentCategoryNo=1&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
+
+# 배포 서술자란? 
+  * 배포 서술자(DD, Deployment Descriptor)는 Java EE 스펙에서 웹 애플리세이션의 기본적인 설정을 위해 작성하는 파일로, 보통 WEB_INF/web.xml 파일을 말한다.
+  * 배포 서술자는 web.xml 이외에도 EJB를 위한 ejb-jar.xml, 웹 서비스를 위한 webservices.xml 등이 있으며, jSP와 서블릿만으로 구성된 경우에는 web.xml 파일만 사용하면 된다.
+  * 개발자가 직접 web.xml파일을 수정하지 않고도 웹 애플리케이션의 개발 및 운영이 가능한 경우도 있다.
+  * 그러나 애플리케이션의 규모가 커지고 특히 필터서블릿이나 스트러츠프레임워크 등을 사용하게 되면 web.xml파일을 직접 수정해줄 필요가 있다. 이클립스를 이용할 경우 많은 부분을 이클립스에서 자동으로 설정하기도 한다.
+
+# web.xml 구조
+
+## 1) <?xml version="1.0" encoding="UTF-8"?> 
+  * XML파일임을 알리는 부분이다. 내용에 한글을 포함할 필요가 있기 때문에, 인코딩 속성은 UTF-8로 설정한다. 이클립스에서라면 자동으로 UTF-8로 설정된다.
+
+## 2) <web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  * <web-app>태그는 web.xml 파일의 루트 엘리먼트이다. 모든 웹 애플리케이션 설정은 <web-app></web-app>태그 사이에 위치하여야 한다.
+  * http://java.sun.com/xml/ns/j2ee/web_app_2_4.xsd 파일의 스키마정의를 따른다는 뜻이다.
+  * 이클립스에서는 자동생성되는 부분이며 굳이 외울필요 없이 복사해서 이용하면 된다.
+
+## 3) <display-name>jspbook</display-name>
+  * 애플리케이션의 표시이름을 설정하는 부분이다. 이클립스에서는 기본적으로 프로젝트명으로 설정된다. 필요하다면 수정할수있다.
+
