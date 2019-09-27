@@ -62,5 +62,17 @@ https://poiemaweb.com/js-hello-world
     * Code Runner 확장 플러그인
         Code Runner 확장 플러그인을 아래의 단축키를 사용하여 현재 표시 중인 자바스크립트 파일을 실행할 수 있다.
         [Window - Ctrl + Alt + N]
-        
+    위 소스를 아래와 같이 변경하여 실행하려면
+    ~~
+        // index.js
+        const arr = [1, 2, 3];
+        arr.forEach(alert);
+    ~~        
+    위 코드를 실행하면 "ReferenceError: alert is not defined"이란 에러가 발생한다. 
+    브라우저에 알림창을 띄우는 alert함수는 클라이언트 사이트 Web API이다. 
+    그런데 위 코드는 Node.js 환경에서 실행된 것이다. 
+    따라서 클라이언트 사이트 Web API인 alert 함수를 Node.js 환경에서는 알수 없기 때문에 에러가 발생한 것이다.
 
+## 4. Live Server 확장 플러그인
+    * HTML 파일을 브라우저에서 직접 오픈하여도 좋지만 경로 문제가 발생할 수 있고, 소스코드를 수정할 때마다 매번 새로 고침을 해야 하므로 번거롭다.
+      확장 플러그인 Live Server를 사용하면 소스코드를 수정할 때마다 수정 사항을 자동으로 반영 해주기 때문에 매우 편리하다.
